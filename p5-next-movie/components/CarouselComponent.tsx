@@ -32,7 +32,7 @@ export default function CarouselComponent(movieListParams: movieListParams) {
     >
       <CarouselContent>
         {movies.map((movie: Movie, index) => (
-          <CarouselItem key={movie.id}>
+          <CarouselItem key={movie.id+'-'+movie.popularity}>
             <div className=" ">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">

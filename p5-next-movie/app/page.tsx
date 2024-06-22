@@ -1,16 +1,26 @@
-// "use client";
-
 import CarouselComponent from "@/components/CarouselComponent";
 import {
+  actionGetMoviesLteGte,
   actionGetMoviesNowPlaying,
+  actionGetMoviesPopular,
+  actionGetMoviesTopRated,
   actionGetMoviesUpcoming,
+  actionGetPeopleTopRated,
 } from "./actions/movies";
 import CarouselHzComponent from "@/components/CarouselHzComponent";
 import CarouselPopularComponent from "@/components/CarouselPopularComponent";
+import CarouselPopularPeopleComponent from "@/components/CarouselPopularPeopleComponent";
+import CaptionComponent from "@/components/CaptionComponent";
 
 export default async function Home() {
   const now_playing_movies = await actionGetMoviesNowPlaying();
   const upcoming_movies = await actionGetMoviesUpcoming();
+  const popular = await actionGetMoviesPopular();
+  const top_rated = await actionGetMoviesTopRated();
+  const from_2000s = await actionGetMoviesLteGte("2010-01-01", "2000-01-01");
+  const from_90s = await actionGetMoviesLteGte("1999-12-12", "1990-01-01");
+  const from_80s = await actionGetMoviesLteGte("1990-01-01", "1980-01-01");
+  const people = await actionGetPeopleTopRated();
 
   return (
     <main className="flex-1  md:container mx-auto    min-h-screen">
@@ -20,16 +30,72 @@ export default async function Home() {
         </div>
 
         <div className="w-1/4 hidden md:flex flex-col ">
-          <div className="relative -top-16 caption">Upcoming</div>
+          <div className="relative -top-16 caption">
+            <span className="pre-caption"></span>Upcoming
+          </div>
           <CarouselHzComponent movies={upcoming_movies}></CarouselHzComponent>
         </div>
       </div>
       <div>
         <div>
-          <div className="caption">Popular</div>
+          {/* Popular */}
           <div>
-            
-            <CarouselPopularComponent movies={upcoming_movies}></CarouselPopularComponent>
+            <CaptionComponent caption={"Popular"}></CaptionComponent>
+            <div>
+              <CarouselPopularComponent
+                movies={popular}
+              ></CarouselPopularComponent>
+            </div>
+          </div>
+
+          {/* Top Rated */}
+          <div>
+            <CaptionComponent caption={"Top Rated"}></CaptionComponent>
+            <div>
+              <CarouselPopularComponent
+                movies={top_rated}
+              ></CarouselPopularComponent>
+            </div>
+          </div>
+
+          {/* From 2000's */}
+          <div>
+            <CaptionComponent caption={"From 2000's"}></CaptionComponent>
+            <div>
+              <CarouselPopularComponent
+                movies={from_2000s}
+              ></CarouselPopularComponent>
+            </div>
+          </div>
+
+          {/* From 90's */}
+          <div>
+            <CaptionComponent caption={"From 90's"}></CaptionComponent>
+            <div>
+              <CarouselPopularComponent
+                movies={from_90s}
+              ></CarouselPopularComponent>
+            </div>
+          </div>
+
+          {/* From 80's */}
+          <div>
+            <CaptionComponent caption={"From 80's"}></CaptionComponent>
+            <div>
+              <CarouselPopularComponent
+                movies={from_80s}
+              ></CarouselPopularComponent>
+            </div>
+          </div>
+
+          {/* People */}
+          <div>
+            <CaptionComponent caption={"People"}></CaptionComponent>
+            <div>
+              <CarouselPopularPeopleComponent
+                people={people}
+              ></CarouselPopularPeopleComponent>
+            </div>
           </div>
         </div>
       </div>

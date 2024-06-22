@@ -29,15 +29,15 @@ export default function CarouselPopularComponent(movieListParams: movieListParam
     >
       <CarouselContent className="-mt-1 h-[500px]">
         {movies.map((movie, index) => (
-          <CarouselItem key={index} className="pt-1 md:basis-1/2 ">
+          <CarouselItem key={movie.id+'-'+movie.popularity} className="pt-1 lg:basis-[25%] md:basis-[50%] basis-[10%] ">
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center p-2 flex-col">
-                  <div className="h-10 w-full flex content-center justify-start  text-lg font-bold text-white line-overflow-1">
+                  <div className="h-10 w-full flex content-center justify-start  text-2xl leading-8 font-normal text-white line-overflow-1">
                     {movie.title}
                   </div>
-                  <div className="flex flex-row gap-1">
-                    <div className="w-2/6">
+                  <div className="flex flex-row gap-4 w-full">
+                    <div className="w-1/2">
                       <Image
                         src={getMoviePicture(movie.poster_path)}
                         width={100}
@@ -47,7 +47,7 @@ export default function CarouselPopularComponent(movieListParams: movieListParam
                       ></Image>
                     </div>
                     <div className="w-2/3 flex items-center ">
-                      <div className="font-regular text-white text-opacity-80 line-overflow-5 ">
+                      <div className="font-regular text-white text-opacity-80 line-overflow-3 ">
                         {movie.overview}
                       </div>
                     </div>

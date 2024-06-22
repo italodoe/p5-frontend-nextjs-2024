@@ -128,3 +128,12 @@ body {
 .caption{
   @apply font-black text-3xl text-[#f5c518]
 }
+
+.pre-caption{
+  width: 0.3rem;
+  background-color: white;
+  display: inline-flex;
+  height: 1.4rem;
+  margin-right: 0.5rem;
+ 
+}
