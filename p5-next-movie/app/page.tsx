@@ -6,6 +6,7 @@ import {
   actionGetMoviesUpcoming,
 } from "./actions/movies";
 import CarouselHzComponent from "@/components/CarouselHzComponent";
+import CarouselPopularComponent from "@/components/CarouselPopularComponent";
 
 export default async function Home() {
   const now_playing_movies = await actionGetMoviesNowPlaying();
@@ -18,8 +19,18 @@ export default async function Home() {
           <CarouselComponent movies={now_playing_movies}></CarouselComponent>
         </div>
 
-        <div className="w-1/4 hidden md:flex ">
-          <CarouselHzComponent   movies={upcoming_movies}></CarouselHzComponent>
+        <div className="w-1/4 hidden md:flex flex-col ">
+          <div className="relative -top-16 caption">Upcoming</div>
+          <CarouselHzComponent movies={upcoming_movies}></CarouselHzComponent>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div className="caption">Popular</div>
+          <div>
+            
+            <CarouselPopularComponent movies={upcoming_movies}></CarouselPopularComponent>
+          </div>
         </div>
       </div>
     </main>

@@ -37,7 +37,7 @@ export default function CarouselComponent(movieListParams: movieListParams) {
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                   <div className="w-full flex-col h-full flex flex-no-wrap content-center justify-start items-center">
-                    <div className="h-20 w-full flex content-center justify-center items-center text-3xl font-bold text-white">
+                    <div className="h-20 w-full flex content-center justify-center items-center text-4xl font-regular text-white">
                       {movie.title}
                     </div>
                     <div></div>

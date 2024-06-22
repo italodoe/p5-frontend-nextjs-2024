@@ -124,3 +124,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.caption{
+  @apply font-black text-3xl text-[#f5c518]
+}
