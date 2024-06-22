@@ -85,6 +85,22 @@ body {
     }
   } */
 
+.line-overflow-1 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-overflow-2 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .line-overflow-3 {
   text-overflow: ellipsis;
   display: -webkit-box;

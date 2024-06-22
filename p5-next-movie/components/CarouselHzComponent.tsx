@@ -32,7 +32,7 @@ export default function CarouselHzComponent(movieListParams: movieListParams) {
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center p-2 flex-col">
-                  <div className="h-10 w-full flex content-center justify-center items-center text-lg font-bold text-white">
+                  <div className="h-10 w-full flex content-center justify-start  text-lg font-bold text-white line-overflow-1">
                     {movie.title}
                   </div>
                   <div className="flex flex-row gap-1">
@@ -41,6 +41,7 @@ export default function CarouselHzComponent(movieListParams: movieListParams) {
                         src={getMoviePicture(movie.poster_path)}
                         width={100}
                         height={200}
+                        className="rounded-md bg-indigo-500 shadow-md shadow-indigo-200/30"
                         alt={movie.title}
                       ></Image>
                     </div>
