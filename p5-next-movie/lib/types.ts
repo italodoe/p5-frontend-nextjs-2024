@@ -15,7 +15,7 @@ export type Movie = {
   vote_count: number;
 };
 
-export type ApiResponse = {
+export type MovieResult = {
   dates: {
     maximum: string;
     minimum: string;
@@ -24,4 +24,24 @@ export type ApiResponse = {
   results: Movie[];
   total_pages: number;
   total_results: number;
+};
+
+ 
+export type Person = {
+    adult: boolean;
+    gender: number;
+    id: number;
+    known_for_department: string;
+    name: string;
+    original_name: string;
+    popularity: number;
+    profile_path: string;
+    known_for: Movie[];
+};
+
+export type PersonResult = {
+    page: number;
+    results: Person[];
+    total_pages: number;
+    total_results: number;
 };
