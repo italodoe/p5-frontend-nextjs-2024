@@ -19,7 +19,7 @@ export default function Header() {
             <AvatarFallback>MOVIE</AvatarFallback>
           </Avatar>
         </Link>
-        <div className=" w-40 lg:max-w-screen-xl w-3/6 sm:gap-x-56 ">
+        <div className="lg:max-w-screen-xl w-3/6 sm:gap-x-56 ">
           <SearchInput></SearchInput>
         </div>
         <div>

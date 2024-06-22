@@ -24,7 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(roboto.className, "flex flex-col ")}>
         <Header></Header>
-        <div className="flex-1  md:container mx-auto pt-5">{children}</div>
+
+        {children}
 
         <Footer></Footer>
       </body>
