@@ -1,7 +1,7 @@
 import { Movie, Person } from "@/lib/types";
 import { capitalizeFirstLetter } from "@/lib/utils";
-import MovieListComponent from "./MovieListComponent";
 import { notFound } from "next/navigation";
+import MovieListComponent from "./MovieListComponent";
 import PaginationComponent from "./PaginationComponent";
 import PersonListComponent from "./PersonListComponent";
 
@@ -21,7 +21,7 @@ export default function PageList(pageListParams: pageListParams) {
     componentList = <MovieListComponent movies={movies}></MovieListComponent>;
   else if (people)
     componentList = <PersonListComponent people={people}></PersonListComponent>;
-  // else return notFound();
+  else return notFound();
 
   return (
     <main className="main-page flex-1  md:container mx-auto pt-5">
