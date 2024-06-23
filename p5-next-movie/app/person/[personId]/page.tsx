@@ -1,4 +1,4 @@
-import { actionGetSinglePerson, actionSingleMovie } from "@/app/actions/movies";
+import { actionGetSinglePerson } from "@/app/actions/movies";
 import { getMoviePicture } from "@/lib/utils";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -15,13 +15,12 @@ export default async function Page({ params }: PageProps) {
   if (person.hasOwnProperty("success") && !person.success) return notFound();
 
   const backdropImg = getMoviePicture(person.profile_path);
-   const posterImg = getMoviePicture(person.profile_path);
+  const posterImg = getMoviePicture(person.profile_path);
 
   return (
     <main className="main-page flex-1  md:container mx-auto pt-5">
       <Image
         fill
-
         src={backdropImg}
         className="  h-screen opacity-30 object-center -z-10 absolute min-h-screen  left-0  bottom-0 max-w-max  "
         alt="image"
@@ -42,7 +41,10 @@ export default async function Page({ params }: PageProps) {
             <h2 className="text-2xl mt-10 uppercase font-bold">biography</h2>
             <p className="text-lg ">{person.biography}</p>
             <h3 className="text-md uppercase font-bold mt-10">Date</h3>
-            <p className="text-lg">{person.birthday}{person.deathday? " - "+person.deathday:"" }</p>
+            <p className="text-lg">
+              {person.birthday}
+              {person.deathday ? " - " + person.deathday : ""}
+            </p>
           </div>
         </div>
       </div>

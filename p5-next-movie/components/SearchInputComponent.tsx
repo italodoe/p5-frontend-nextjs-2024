@@ -1,8 +1,8 @@
 "use client";
 import { cn, debounce } from "@/lib/utils";
-import { Input } from "./ui/input";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEventHandler, useRef } from "react";
+import { Input } from "./ui/input";
 
 export default function SearchInput() {
   const searchParams = useSearchParams();

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -7,13 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Link from "next/link";
 import { Movie } from "@/lib/types";
 import {
   getDefaultDateFormat,
   getDefaultMoviePicture,
   getMoviePicture,
 } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 type CardMovieProps = {
   params: Movie;

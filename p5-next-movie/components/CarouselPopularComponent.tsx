@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -66,7 +65,7 @@ export default function CarouselPopularComponent(
         ))}
       </CarouselContent>
       <CarouselPrevious className="border-2	" />
-      <CarouselNext className="border-2	"/>
+      <CarouselNext className="border-2	" />
     </Carousel>
   );
 }

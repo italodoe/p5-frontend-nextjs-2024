@@ -1,6 +1,6 @@
 import { Movie } from "@/lib/types";
-import CardMovieComponent from "./CardMovieComponent";
 import { notFound } from "next/navigation";
+import CardMovieComponent from "./CardMovieComponent";
 
 type movieListParams = {
   movies: Movie[] | null;

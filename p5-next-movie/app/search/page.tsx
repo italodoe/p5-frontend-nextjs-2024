@@ -7,11 +7,17 @@ const Home: FC<serverParams> = async ({ searchParams }: serverParams) => {
   const { query, page } = searchParams;
   var actualPage = page ? page : 1;
   const block = await actionSearchMovies(query, actualPage);
-  //todo check empty
-  const {movies: movies_search, total_pages} = block;
+  const { movies: movies_search, total_pages } = block;
 
   return (
-    <PageList text={query} term={null} page={actualPage} movies={movies_search} totalPages={total_pages} people={null}></PageList>
+    <PageList
+      text={query}
+      term={null}
+      page={actualPage}
+      movies={movies_search}
+      totalPages={total_pages}
+      people={null}
+    ></PageList>
   );
 };
 export default Home;

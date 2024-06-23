@@ -4,7 +4,10 @@ type CaptionComponentProps = {
   caption: string;
   href: string;
 };
-export default function CaptionComponent({ caption, href }: CaptionComponentProps) {
+export default function CaptionComponent({
+  caption,
+  href,
+}: CaptionComponentProps) {
   return (
     <Link href={href} className="caption-link">
       <div className="caption">

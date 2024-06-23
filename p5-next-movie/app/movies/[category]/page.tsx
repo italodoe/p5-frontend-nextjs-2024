@@ -18,7 +18,6 @@ type serverParams = {
   };
 };
 
-// export default async function Page({ params }: PageProps) {
 const Home: FC<serverParams> = async ({
   searchParams,
   params,
@@ -44,7 +43,6 @@ const Home: FC<serverParams> = async ({
       result = block.movies;
       total_pages = block.total_pages;
       total_pages = block.total_pages;
-
       break;
     }
 
@@ -52,7 +50,6 @@ const Home: FC<serverParams> = async ({
       block = await actionGetMoviesTopRated(actualPage);
       result = block.movies;
       total_pages = block.total_pages;
-
       break;
     }
 
@@ -64,7 +61,6 @@ const Home: FC<serverParams> = async ({
       );
       result = block.discover;
       total_pages = block.total_pages;
-
       break;
     }
 
@@ -76,7 +72,6 @@ const Home: FC<serverParams> = async ({
       );
       result = block.discover;
       total_pages = block.total_pages;
-
       break;
     }
 
@@ -88,7 +83,6 @@ const Home: FC<serverParams> = async ({
       );
       result = block.discover;
       total_pages = block.total_pages;
-
       break;
     }
 
@@ -101,8 +95,6 @@ const Home: FC<serverParams> = async ({
     }
 
     default: {
-      // const result = null;
-      // const total_pages = null;
       break;
     }
   }

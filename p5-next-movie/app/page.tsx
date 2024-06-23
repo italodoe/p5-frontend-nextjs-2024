@@ -1,4 +1,9 @@
+import CaptionComponent from "@/components/CaptionComponent";
 import CarouselComponent from "@/components/CarouselComponent";
+import CarouselHzComponent from "@/components/CarouselHzComponent";
+import CarouselPopularComponent from "@/components/CarouselPopularComponent";
+import CarouselPopularPeopleComponent from "@/components/CarouselPopularPeopleComponent";
+import { movieCategories } from "@/lib/utils";
 import {
   actionGetMoviesLteGte,
   actionGetMoviesNowPlaying,
@@ -7,11 +12,6 @@ import {
   actionGetMoviesUpcoming,
   actionGetPeopleTopRated,
 } from "./actions/movies";
-import CarouselHzComponent from "@/components/CarouselHzComponent";
-import CarouselPopularComponent from "@/components/CarouselPopularComponent";
-import CarouselPopularPeopleComponent from "@/components/CarouselPopularPeopleComponent";
-import CaptionComponent from "@/components/CaptionComponent";
-import { movieCategories } from "@/lib/utils";
 
 export default async function Home() {
   const firstPage = 1;
@@ -37,7 +37,7 @@ export default async function Home() {
     firstPage
   );
   const { people } = await actionGetPeopleTopRated(firstPage);
-  
+
   return (
     <main className="flex-1  md:container mx-auto    min-h-screen">
       <div className="w-full flex flex-row h-auto items-center justify-center gap-10">

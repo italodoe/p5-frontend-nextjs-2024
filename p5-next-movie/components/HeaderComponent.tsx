@@ -23,7 +23,11 @@ export default function Header() {
           <SearchInput></SearchInput>
         </div>
         <div>
-          <Button className="text-zinc-100 bg-slate-600/30" variant="ghost" size={"icon"}>
+          <Button
+            className="text-zinc-100 bg-slate-600/30"
+            variant="ghost"
+            size={"icon"}
+          >
             ES
           </Button>
         </div>

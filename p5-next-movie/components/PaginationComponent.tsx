@@ -2,11 +2,8 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationLink
 } from "@/components/ui/pagination";
 import { useRouter } from "next/navigation";
 
