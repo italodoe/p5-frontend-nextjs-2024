@@ -4,29 +4,27 @@ import Link from "next/link";
 import { useRef } from "react";
 
 export default function NotFound() {
-  const ref = useRef();
+  const ref = useRef<HTMLHeadingElement>(null);
 
   const onMouseMoveSectionHandler = (e: any) => {
     let x = e.pageX - window.innerWidth / 2;
     let y = e.pageY - window.innerHeight / 2;
-    console.log(x, y);
-    console.log(ref);
-    ref.current.style.setProperty("--x", x + "px");
-    ref.current.style.setProperty("--y", y + "px");
+    ref.current?.style.setProperty("--x", x + "px");
+    ref.current?.style.setProperty("--y", y + "px");
   };
 
   const onMouseMoveTitleHandler = (e: any) => {
     let x = e.pageX - window.innerWidth / 2;
     let y = e.pageY - window.innerHeight / 2;
 
-    let rad = Math.atan2(y, x).toFixed(2);
-    let length = Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / 10);
+    const rad = Math.atan2(y, x).toFixed(2);
+    const length = Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / 10);
 
-    let x_shadow = Math.round(length * Math.cos(rad));
-    let y_shadow = Math.round(length * Math.sin(rad));
+    const x_shadow = Math.round(length * Math.cos(Number(rad)));
+    const y_shadow = Math.round(length * Math.sin(Number(rad)));
 
-    ref.current.style.setProperty("--x-shadow", -x_shadow + "px");
-    ref.current.style.setProperty("--y-shadow", -y_shadow + "px");
+    ref.current?.style.setProperty("--x-shadow", -x_shadow + "px");
+    ref.current?.style.setProperty("--y-shadow", -y_shadow + "px");
   };
 
   return (
