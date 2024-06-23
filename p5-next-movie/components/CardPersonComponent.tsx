@@ -33,7 +33,7 @@ export default function CardPersonComponent({ params }: CardPersonProps) {
   var image_path = getDefaultMoviePicture();
   if (profile_path !== null) image_path = getMoviePicture(profile_path);
   return (
-    <Link href={`/movie/${id}`} className="card-link">
+    <Link href={`/person/${id}`} className="card-link">
       <Card className="card-item bg-stone-900 text-destructive-foreground hover:bg-stone-800 cursor-pointer select-none">
         <Image
           className="card-image"

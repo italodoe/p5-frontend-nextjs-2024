@@ -8,6 +8,7 @@ import {
   getMoviesUpcoming,
   getPersonPopular,
   getSingleMovie,
+  getSinglePerson,
   searchMovies,
 } from "@/lib/movies";
 
@@ -53,4 +54,9 @@ export async function actionSingleMovie(movieId: number) {
 export async function actionSearchMovies(query: string, page: number) {
   const movies = await searchMovies(query, page);
   return movies;
+}
+
+export async function actionGetSinglePerson(personId: number) {
+  const person = await getSinglePerson(personId);
+  return person;
 }

@@ -35,7 +35,7 @@ export default function CarouselPopularPeopleComponent(
             key={person.id + "-" + person.popularity}
             className="pt-1 lg:basis-[25%] md:basis-[50%] basis-[10%] "
           >
-            <Link href={`/movie/${person.id}`} className="card-main-link">
+            <Link href={`/person/${person.id}`} className="card-main-link">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex items-center justify-center p-2 flex-col">

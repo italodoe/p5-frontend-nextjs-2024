@@ -1,5 +1,5 @@
 import { env } from "./env";
-import { Movie, Person, SingleMovie } from "./types";
+import { Movie, Person, SingleMovie, SinglePerson } from "./types";
 
 const tmdbFetch = async (path: string) => {
   const options = {
@@ -116,4 +116,9 @@ export const searchMovies = async (query: string, pageToSearch: number) => {
     release_date: new Date(result.release_date),
   }));
   return { movies: movies as Movie[], page, total_pages };
+};
+
+export const getSinglePerson = async (personId: number) => {
+  const person = await tmdbFetch(`person/${personId}}`);
+  return person as SinglePerson;
 };
