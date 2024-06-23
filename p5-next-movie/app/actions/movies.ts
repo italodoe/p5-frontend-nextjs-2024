@@ -7,6 +7,7 @@ import {
   getMoviesTopRated,
   getMoviesUpcoming,
   getPersonPopular,
+  getSingleMovie,
 } from "@/lib/movies";
 
 export async function actionGetMoviesNowPlaying() {
@@ -37,4 +38,9 @@ export async function actionGetPeopleTopRated() {
 export async function actionGetMoviesLteGte(lte: string, gte: string) {
   const discover_movies = await getMoviesLteGte(lte, gte);
   return discover_movies;
+}
+
+export async function actionSingleMovie(movieId: number) {
+  const movie = await getSingleMovie(movieId);
+  return movie;
 }

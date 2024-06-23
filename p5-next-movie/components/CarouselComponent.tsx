@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { Movie } from "@/lib/types";
 import { getMoviePicture } from "@/lib/utils";
+import Link from "next/link";
 type movieListParams = {
   movies: Movie[];
 };
@@ -32,29 +33,31 @@ export default function CarouselComponent(movieListParams: movieListParams) {
     >
       <CarouselContent>
         {movies.map((movie: Movie, index) => (
-          <CarouselItem key={movie.id+'-'+movie.popularity}>
-            <div className=" ">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className="w-full flex-col h-full flex flex-no-wrap content-center justify-start items-center">
-                    <div className="h-20 w-full flex content-center justify-center items-center text-4xl font-regular text-white">
-                      {movie.title}
+          <CarouselItem key={movie.id + "-" + movie.popularity}>
+            <Link href={`/movie/${movie.id}`} className="card-main-link">
+              <div className=" ">
+                <Card>
+                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <div className="w-full flex-col h-full flex flex-no-wrap content-center justify-start items-center">
+                      <div className="h-20 w-full flex content-center justify-center items-center text-4xl font-regular text-white">
+                        {movie.title}
+                      </div>
+                      <div></div>
+                      <Image
+                        className="rounded-md"
+                        src={getMoviePicture(movie.backdrop_path)}
+                        width={1000}
+                        height={500}
+                        alt="movie"
+                      ></Image>
+                      <div className="flex text-justify pt-4 font-medium text-white   xt-zinc-200 mt-8 line-overflow-4 ">
+                        {movie.overview}
+                      </div>
                     </div>
-                    <div></div>
-                    <Image
-                      className="rounded-md"
-                      src={getMoviePicture(movie.backdrop_path)}
-                      width={1000}
-                      height={500}
-                      alt="movie"
-                    ></Image>
-                    <div className="flex text-justify pt-4 font-medium text-white   xt-zinc-200 mt-8 line-overflow-4 ">
-                      {movie.overview}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </Link>
           </CarouselItem>
         ))}
       </CarouselContent>

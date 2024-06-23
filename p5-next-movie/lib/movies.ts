@@ -1,5 +1,5 @@
 import { env } from "./env";
-import { Movie, Person } from "./types";
+import { Movie, Person, SingleMovie } from "./types";
 
 const tmdbFetch = async (path: string) => {
   const options = {
@@ -59,11 +59,18 @@ export const getPersonPopular = async () => {
 };
 
 export const getMoviesLteGte = async (lte: string, gte: string) => {
-  const { results: discover_movies } = await tmdbFetch(`discover/movie?primary_release_date.gte=${gte}&primary_release_date.lte=${lte}&sort_by=popularity.desc`);
+  const { results: discover_movies } = await tmdbFetch(
+    `discover/movie?primary_release_date.gte=${gte}&primary_release_date.lte=${lte}&sort_by=popularity.desc`
+  );
   const discover = discover_movies.map((result: Movie) => ({
     ...result,
     release_date: new Date(result.release_date),
   }));
-  console.log(discover)
+  console.log(discover);
   return discover as Movie[];
+};
+
+export const getSingleMovie = async (movieId: number) => {
+  const movie = await tmdbFetch(`movie/${movieId}`);
+  return movie as SingleMovie;
 };
