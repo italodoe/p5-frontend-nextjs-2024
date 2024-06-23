@@ -14,14 +14,30 @@ import CaptionComponent from "@/components/CaptionComponent";
 import { movieCategories } from "@/lib/utils";
 
 export default async function Home() {
-  const now_playing_movies = await actionGetMoviesNowPlaying();
-  const upcoming_movies = await actionGetMoviesUpcoming();
-  const popular = await actionGetMoviesPopular();
-  const top_rated = await actionGetMoviesTopRated();
-  const from_2000s = await actionGetMoviesLteGte("2010-01-01", "2000-01-01");
-  const from_90s = await actionGetMoviesLteGte("1999-12-12", "1990-01-01");
-  const from_80s = await actionGetMoviesLteGte("1990-01-01", "1980-01-01");
-  const people = await actionGetPeopleTopRated();
+  const firstPage = 1;
+  const { movies: now_playing_movies } = await actionGetMoviesNowPlaying(
+    firstPage
+  );
+  const { movies: upcoming_movies } = await actionGetMoviesUpcoming(firstPage);
+  const { movies: popular } = await actionGetMoviesPopular(firstPage);
+  const { movies: top_rated } = await actionGetMoviesTopRated(firstPage);
+  const { discover: from_2000s } = await actionGetMoviesLteGte(
+    "2010-01-01",
+    "2000-01-01",
+    firstPage
+  );
+  const { discover: from_90s } = await actionGetMoviesLteGte(
+    "1999-12-12",
+    "1990-01-01",
+    firstPage
+  );
+  const { discover: from_80s } = await actionGetMoviesLteGte(
+    "1990-01-01",
+    "1980-01-01",
+    firstPage
+  );
+  const { people } = await actionGetPeopleTopRated(firstPage);
+  
   return (
     <main className="flex-1  md:container mx-auto    min-h-screen">
       <div className="w-full flex flex-row h-auto items-center justify-center gap-10">

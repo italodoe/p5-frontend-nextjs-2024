@@ -5,63 +5,118 @@ import {
   actionGetMoviesUpcoming,
   actionGetPeopleTopRated,
 } from "@/app/actions/movies";
-import CaptionComponent from "@/components/CaptionComponent";
-import MovieListComponent from "@/components/MovieListComponent";
 import PageList from "@/components/PageList";
-import { capitalizeFirstLetter, movieCategories } from "@/lib/utils";
+import { movieCategories } from "@/lib/utils";
+import { FC } from "react";
 
-type PageProps = {
+type serverParams = {
+  searchParams: {
+    page: number;
+  };
   params: {
     category: string;
   };
 };
 
-export default async function Page({ params }: PageProps) {
+// export default async function Page({ params }: PageProps) {
+const Home: FC<serverParams> = async ({
+  searchParams,
+  params,
+}: serverParams) => {
   const { category } = params;
+  const { page } = searchParams;
+  var actualPage = page ? page : 1;
   let result = null;
+  let people = null;
+  let total_pages = 1;
+  let block = null;
 
   switch (category.toLowerCase()) {
     case movieCategories.upcoming.code: {
-      result = await actionGetMoviesUpcoming();
+      block = await actionGetMoviesUpcoming(actualPage);
+      result = block.movies;
+      total_pages = block.total_pages;
       break;
     }
 
     case movieCategories.popular.code: {
-      result = await actionGetMoviesPopular();
+      block = await actionGetMoviesPopular(actualPage);
+      result = block.movies;
+      total_pages = block.total_pages;
+      total_pages = block.total_pages;
+
       break;
     }
 
     case movieCategories.top_rated.code: {
-      result = await actionGetMoviesTopRated();
+      block = await actionGetMoviesTopRated(actualPage);
+      result = block.movies;
+      total_pages = block.total_pages;
+
       break;
     }
 
     case movieCategories.from_2000.code: {
-      result = await actionGetMoviesLteGte("2010-01-01", "2000-01-01");
+      block = await actionGetMoviesLteGte(
+        "2010-01-01",
+        "2000-01-01",
+        actualPage
+      );
+      result = block.discover;
+      total_pages = block.total_pages;
+
       break;
     }
 
     case movieCategories.from_1990.code: {
-      result = await actionGetMoviesLteGte("1999-12-12", "1990-01-01");
+      block = await actionGetMoviesLteGte(
+        "1999-12-12",
+        "1990-01-01",
+        actualPage
+      );
+      result = block.discover;
+      total_pages = block.total_pages;
+
       break;
     }
 
     case movieCategories.from_1980.code: {
-      result = await actionGetMoviesLteGte("1990-01-01", "1980-01-01");
+      block = await actionGetMoviesLteGte(
+        "1990-01-01",
+        "1980-01-01",
+        actualPage
+      );
+      result = block.discover;
+      total_pages = block.total_pages;
+
       break;
     }
 
-    // case movieCategories.people.code: {
-    //   result = await actionGetPeopleTopRated();
-    //   break;
-    // }
+    case movieCategories.people.code: {
+      block = await actionGetPeopleTopRated(actualPage);
+      people = block.people;
+      total_pages = block.total_pages;
+
+      break;
+    }
 
     default: {
+      // const result = null;
+      // const total_pages = null;
       break;
     }
   }
 
   return (
-    <PageList term={category} movies={result}></PageList>
+    <PageList
+      text={category}
+      movies={result}
+      people={people}
+      page={actualPage}
+      term={null}
+      totalPages={total_pages}
+    ></PageList>
   );
-}
+};
+
+export default Home;

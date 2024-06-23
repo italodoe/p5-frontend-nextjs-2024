@@ -5,14 +5,13 @@ import { actionSearchMovies } from "../actions/movies";
 
 const Home: FC<serverParams> = async ({ searchParams }: serverParams) => {
   const { query, page } = searchParams;
-  var movies_search = null;
-  if (query)
-    movies_search = await actionSearchMovies(query)
-
-  console.log(query);
+  var actualPage = page ? page : 1;
+  const block = await actionSearchMovies(query, actualPage);
+  //todo check empty
+  const {movies: movies_search, total_pages} = block;
 
   return (
-    <PageList term={query} movies={movies_search}></PageList>
+    <PageList text={query} term={null} page={actualPage} movies={movies_search} totalPages={total_pages} people={null}></PageList>
   );
 };
 export default Home;
