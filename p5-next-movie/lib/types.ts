@@ -112,6 +112,10 @@ export type SingleMovie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+
+  success?: boolean;
+  status_code?: number;
+  status_message?: string;
 };
 
 export type serverParams = {
