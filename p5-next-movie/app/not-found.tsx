@@ -15,7 +15,7 @@ export default function NotFound() {
     ref.current.style.setProperty("--y", y + "px");
   };
 
-  const onMouseMoveTitlenHandler = (e: any) => {
+  const onMouseMoveTitleHandler = (e: any) => {
     let x = e.pageX - window.innerWidth / 2;
     let y = e.pageY - window.innerHeight / 2;
 
@@ -38,7 +38,7 @@ export default function NotFound() {
       <h1
         className="error_title text-zinc-900 cursor-default fon-black"
         ref={ref}
-        onMouseMove={(e) => onMouseMoveTitlenHandler(e)}
+        onMouseMove={(e) => onMouseMoveTitleHandler(e)}
       >
         <p className="">404</p>
         404
