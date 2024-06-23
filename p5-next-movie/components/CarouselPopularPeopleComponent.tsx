@@ -29,7 +29,7 @@ export default function CarouselPopularPeopleComponent(
       orientation="horizontal"
       className="w-full   "
     >
-      <CarouselContent className="-mt-1 h-[500px]">
+      <CarouselContent className="-mt-1 h-[300px]">
         {people.map((person, index) => (
           <CarouselItem
             key={person.id + "-" + person.popularity}
@@ -46,9 +46,9 @@ export default function CarouselPopularPeopleComponent(
                       <div className="w-2/6">
                         <Image
                           src={getMoviePicture(person.profile_path)}
-                          width={100}
+                          width={200}
                           height={200}
-                          className="rounded-md bg-indigo-500 shadow-md shadow-indigo-200/30"
+                          className="    rounded-full"
                           alt={person.name}
                         ></Image>
                       </div>
@@ -69,8 +69,8 @@ export default function CarouselPopularPeopleComponent(
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious  className="border-2	"/>
+      <CarouselNext  className="border-2	"/>
     </Carousel>
   );
 }

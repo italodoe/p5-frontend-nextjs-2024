@@ -61,8 +61,8 @@ export default function CarouselComponent(movieListParams: movieListParams) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="border-2	" />
+      <CarouselNext className="border-2	" />
     </Carousel>
   );
 }

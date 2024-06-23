@@ -29,7 +29,7 @@ export default function CarouselPopularComponent(
       orientation="horizontal"
       className="w-full   "
     >
-      <CarouselContent className="-mt-1 h-[500px]">
+      <CarouselContent className="-mt-1 h-[300px]">
         {movies.map((movie, index) => (
           <CarouselItem
             key={movie.id + "-" + movie.popularity}
@@ -65,8 +65,8 @@ export default function CarouselPopularComponent(
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="border-2	" />
+      <CarouselNext className="border-2	"/>
     </Carousel>
   );
 }

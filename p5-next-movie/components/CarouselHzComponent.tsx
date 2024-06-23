@@ -27,7 +27,7 @@ export default function CarouselHzComponent(movieListParams: movieListParams) {
       orientation="vertical"
       className="w-full max-w-xs   "
     >
-      <CarouselContent className="-mt-1 h-[500px]">
+      <CarouselContent className="-mt-1 h-[470px] ">
         {movies.map((movie, index) => (
           <CarouselItem
             key={movie.id + "-" + movie.popularity}
@@ -63,8 +63,8 @@ export default function CarouselHzComponent(movieListParams: movieListParams) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="border-2	" />
+      <CarouselNext className="border-2	" />
     </Carousel>
   );
 }

@@ -60,7 +60,7 @@
     --destructive-foreground: 60 9.1% 97.8%;
 
     --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
+    --input: 44.02deg 93.33% 41.37% / 71%;
     --ring: 24 5.7% 82.9%;
   }
 }
@@ -262,9 +262,14 @@ body {
 
 .card-main-link:hover > div {
   transform: scale(1.03);
-  box-shadow: 3px -4px 8px 6px #6f4bff66;
+  box-shadow: inset 1px 3px 20px 6px #5e3edf38;
 }
 
 .card-main-link > div {
   transition: 200ms;
+  border-radius: 15px;
+}
+
+.card-carousel-wrapper{
+  @apply pt-5
 }

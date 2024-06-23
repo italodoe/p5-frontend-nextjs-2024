@@ -42,7 +42,7 @@ export default async function Home() {
       <div>
         <div>
           {/* Popular */}
-          <div>
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.popular.text}
               href={movieCategories.popular.href}
@@ -55,7 +55,7 @@ export default async function Home() {
           </div>
 
           {/* Top Rated */}
-          <div>
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.top_rated.text}
               href={movieCategories.top_rated.href}
@@ -68,7 +68,7 @@ export default async function Home() {
           </div>
 
           {/* From 2000's */}
-          <div>
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.from_2000.text}
               href={movieCategories.from_2000.href}
@@ -81,7 +81,7 @@ export default async function Home() {
           </div>
 
           {/* From 90's */}
-          <div>
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.from_1990.text}
               href={movieCategories.from_1990.href}
@@ -94,7 +94,8 @@ export default async function Home() {
           </div>
 
           {/* From 80's */}
-          <div>
+                  <div className="card-carousel-wrapper">
+     
             <CaptionComponent
               caption={movieCategories.from_1980.text}
               href={movieCategories.from_1980.href}
@@ -107,7 +108,7 @@ export default async function Home() {
           </div>
 
           {/* People */}
-          <div>
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.people.text}
               href={movieCategories.people.href}
