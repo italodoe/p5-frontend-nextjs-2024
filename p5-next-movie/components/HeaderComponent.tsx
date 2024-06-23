@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        " items-center p-3 w-full   sticky top-0  z-10 backdrop-blur-md bg-slate-600/30 "
+        " items-center p-3 w-full   sticky top-0  z-10 backdrop-blur-md  bg-[#5151514d]"
       )}
     >
       <div className="flex flex-row flex-no-wrap items-center  md:container m-auto justify-between gap-3">
