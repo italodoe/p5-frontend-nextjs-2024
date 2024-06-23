@@ -151,11 +151,11 @@ body {
 }
 
 .caption-link:hover .pre-caption {
-  background-color: #f5c518;
+  background-color: hsl(var(--input));
 }
 
 .caption-link:hover .arrow.arrow-right {
-  border: solid #f5c518;
+  border: solid hsl(var(--input));
 }
 
 .super-text-shadow-blue {
@@ -173,7 +173,7 @@ body {
   background-image: linear-gradient(-225deg, #1a1a1a, #343434);
 }
 .error_section_subtitle {
-  color: #25f193;
+  color: hsl(var(--input));
   text-transform: uppercase;
   letter-spacing: 5pt;
   font-weight: 500;

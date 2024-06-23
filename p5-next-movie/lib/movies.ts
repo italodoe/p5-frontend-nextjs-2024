@@ -7,6 +7,7 @@ const tmdbFetch = async (path: string) => {
     headers: {
       accept: "application/json",
       Authorization: `Bearer ${env("TMDB_TOKEN")}`,
+      cache: "no-store"
     },
   };
   const response = await fetch(`https://api.themoviedb.org/3/${path}`, options);
