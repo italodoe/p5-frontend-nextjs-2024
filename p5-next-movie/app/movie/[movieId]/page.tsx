@@ -12,9 +12,8 @@ type PageProps = {
 export default async function Page({ params }: PageProps) {
   const { movieId } = params;
   const movie = await actionSingleMovie(movieId);
-  console.log('movie--->>', movie)
-  if (movie.hasOwnProperty('success') && !movie.success)
-    return notFound();
+  if (movie.hasOwnProperty("success") && !movie.success) return notFound();
+
   const backdropImg = getMoviePicture(movie.backdrop_path);
   const posterImg = getMoviePicture(movie.poster_path);
 
