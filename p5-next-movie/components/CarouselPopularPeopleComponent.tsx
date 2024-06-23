@@ -56,7 +56,9 @@ export default function CarouselPopularPeopleComponent(
                         <div className="font-regular text-white text-opacity-80 line-overflow-5 ">
                           <div className="flex flex-col">
                             {person.known_for.map((movie: Movie, index) => (
-                              <div>{movie.title}</div>
+                              <div key={movie.id + "-" + person.id}>
+                                {movie.title}
+                              </div>
                             ))}
                           </div>
                         </div>
@@ -69,8 +71,8 @@ export default function CarouselPopularPeopleComponent(
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious  className="border-2	"/>
-      <CarouselNext  className="border-2	"/>
+      <CarouselPrevious className="border-2	" />
+      <CarouselNext className="border-2	" />
     </Carousel>
   );
 }

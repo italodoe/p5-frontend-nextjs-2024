@@ -94,8 +94,7 @@ export default async function Home() {
           </div>
 
           {/* From 80's */}
-                  <div className="card-carousel-wrapper">
-     
+          <div className="card-carousel-wrapper">
             <CaptionComponent
               caption={movieCategories.from_1980.text}
               href={movieCategories.from_1980.href}

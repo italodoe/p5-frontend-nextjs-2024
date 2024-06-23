@@ -13,6 +13,10 @@ export type Movie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+
+  success?: boolean;
+  status_code?: number;
+  status_message?: string;
 };
 
 export type MovieResult = {
@@ -108,4 +112,11 @@ export type SingleMovie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+};
+
+export type serverParams = {
+  searchParams: {
+    query: string;
+    page: number;
+  };
 };

@@ -75,3 +75,12 @@ export const getSingleMovie = async (movieId: number) => {
   const movie = await tmdbFetch(`movie/${movieId}`);
   return movie as SingleMovie;
 };
+
+export const searchMovies = async (query: string) => {
+  const { results: popular } = await tmdbFetch(`search/movie?query=${query}`);
+  const movies = popular.map((result: Movie) => ({
+    ...result,
+    release_date: new Date(result.release_date),
+  }));
+  return movies as Movie[];
+};

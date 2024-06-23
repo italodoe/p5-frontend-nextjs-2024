@@ -8,6 +8,7 @@ import {
   getMoviesUpcoming,
   getPersonPopular,
   getSingleMovie,
+  searchMovies,
 } from "@/lib/movies";
 
 export async function actionGetMoviesNowPlaying() {
@@ -43,4 +44,9 @@ export async function actionGetMoviesLteGte(lte: string, gte: string) {
 export async function actionSingleMovie(movieId: number) {
   const movie = await getSingleMovie(movieId);
   return movie;
+}
+
+export async function actionSearchMovies(query: string) {
+  const movies = await searchMovies(query);
+  return movies;
 }

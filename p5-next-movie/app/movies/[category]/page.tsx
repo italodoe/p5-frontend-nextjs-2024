@@ -7,6 +7,7 @@ import {
 } from "@/app/actions/movies";
 import CaptionComponent from "@/components/CaptionComponent";
 import MovieListComponent from "@/components/MovieListComponent";
+import PageList from "@/components/PageList";
 import { capitalizeFirstLetter, movieCategories } from "@/lib/utils";
 
 type PageProps = {
@@ -61,19 +62,6 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <main className="main-page flex-1  md:container mx-auto pt-5">
-      <div className="w-full h-hull pb-10">
-        <div className="caption w-full text-center pt-16 pb-16">
-          {capitalizeFirstLetter(category)}
-        </div>
-
-        <div className="md:grid md:grid-cols-4 gap-4 pt-4 -scroll-mb-10">
-          {<MovieListComponent movies={result}></MovieListComponent>}
-        </div>
-        {/* <div className="flex flex-col items-center py-10 text-zinc-100 w-full m-auto">
-        <PaginationComponent></PaginationComponent>
-      </div> */}
-      </div>
-    </main>
+    <PageList term={category} movies={result}></PageList>
   );
 }

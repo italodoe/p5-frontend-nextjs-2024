@@ -58,3 +58,12 @@ export const movieCategories: MovieCategories = {
     href: "/movies/people",
   },
 };
+
+
+export function debounce(fn: any, delay: number) {
+  let timeoutId: string | number | NodeJS.Timeout | undefined;
+  return (...args: any) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+}

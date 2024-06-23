@@ -1,6 +1,7 @@
 import { actionSingleMovie } from "@/app/actions/movies";
 import { getMoviePicture } from "@/lib/utils";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type PageProps = {
   params: {
@@ -11,6 +12,9 @@ type PageProps = {
 export default async function Page({ params }: PageProps) {
   const { movieId } = params;
   const movie = await actionSingleMovie(movieId);
+  console.log('movie--->>', movie)
+  if (movie.hasOwnProperty('success') && !movie['success'])
+    return notFound();
   const backdropImg = getMoviePicture(movie.backdrop_path);
   const posterImg = getMoviePicture(movie.poster_path);
 
