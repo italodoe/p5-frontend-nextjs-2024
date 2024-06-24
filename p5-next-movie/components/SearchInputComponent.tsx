@@ -13,6 +13,7 @@ export default function SearchInput() {
     const params = new URLSearchParams(searchParams);
     if (value) {
       params.set("query", value);
+      params.delete("page");
       url = `/search/?${params.toString()}`;
     } else {
       params.delete("query");
