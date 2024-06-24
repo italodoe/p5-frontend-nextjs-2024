@@ -14,7 +14,7 @@ export default function Header() {
     >
       <div className="flex flex-row flex-no-wrap items-center  md:container m-auto justify-between gap-3">
         <Link href={"/"}>
-          <Avatar>
+          <Avatar className="h-14 w-14">
             <AvatarImage src="/logo.svg" alt="icon" />
             <AvatarFallback>MOVIE</AvatarFallback>
           </Avatar>
@@ -24,7 +24,7 @@ export default function Header() {
         </div>
         <div>
           <Button
-            className="text-zinc-100 bg-slate-600/30"
+            className="text-zinc-100 bg-slate-600/30 invisible"
             variant="ghost"
             size={"icon"}
           >
