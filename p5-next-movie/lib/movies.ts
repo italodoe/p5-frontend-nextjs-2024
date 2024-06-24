@@ -102,7 +102,7 @@ export const getMoviesLteGte = async (
 
 export const getSingleMovie = async (movieId: number) => {
   const movie = await tmdbFetch(`movie/${movieId}}`);
-  return movie as SingleMovie;
+  return {...movie, release_date: new Date(movie.release_date),} as SingleMovie;
 };
 
 export const searchMovies = async (query: string, pageToSearch: number) => {
@@ -120,5 +120,5 @@ export const searchMovies = async (query: string, pageToSearch: number) => {
 
 export const getSinglePerson = async (personId: number) => {
   const person = await tmdbFetch(`person/${personId}}`);
-  return person as SinglePerson;
+  return {...person, birthday: new Date(person.birthday), deathday: person.deathday ? new Date(person.deathday): null } as SinglePerson;
 };

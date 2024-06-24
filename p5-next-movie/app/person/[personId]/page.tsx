@@ -1,5 +1,5 @@
 import { actionGetSinglePerson } from "@/app/actions/movies";
-import { getMoviePicture } from "@/lib/utils";
+import { getDefaultDateFormat, getMoviePicture } from "@/lib/utils";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -37,13 +37,26 @@ export default async function Page({ params }: PageProps) {
           ></Image>
           <div className="flex flex-col justify-center pl-10 basis-2/4 text-zinc-100">
             <h1 className="text-3xl font-bold uppercase">{person.name}</h1>
-            <p className="text-md italic">{person.also_known_as}</p>
+            <p className="text-md italic">
+              {person.also_known_as.map((name, index) => (
+                <>
+                  {index !== 0 ? " - " : ""}
+                  <span className="mx-2">{name}</span>
+                </>
+              ))}
+            </p>
             <h2 className="text-2xl mt-10 uppercase font-bold">biography</h2>
             <p className="text-lg ">{person.biography}</p>
             <h3 className="text-md uppercase font-bold mt-10">Date</h3>
             <p className="text-lg">
-              {person.birthday}
-              {person.deathday ? " - " + person.deathday : ""}
+              {person.birthday.toLocaleString("en-US", getDefaultDateFormat())}
+              {person.deathday
+                ? " - " +
+                  person.deathday.toLocaleString(
+                    "en-US",
+                    getDefaultDateFormat()
+                  )
+                : ""}
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { actionSingleMovie } from "@/app/actions/movies";
-import { getMoviePicture } from "@/lib/utils";
+import { getDefaultDateFormat, getMoviePicture } from "@/lib/utils";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -40,7 +40,7 @@ export default async function Page({ params }: PageProps) {
             <h2 className="text-2xl mt-10 uppercase font-bold">overview</h2>
             <p className="text-lg ">{movie.overview}</p>
             <h3 className="text-md uppercase font-bold mt-10">Release date</h3>
-            <p className="text-lg">{movie.release_date}</p>
+            <p className="text-lg">{movie.release_date.toLocaleString("en-US", getDefaultDateFormat())}</p>
           </div>
         </div>
       </div>

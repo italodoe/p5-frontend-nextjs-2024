@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -6,14 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 import { Movie } from "@/lib/types";
 import {
   getDefaultDateFormat,
   getDefaultMoviePicture,
   getMoviePicture,
 } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
 
 type CardMovieProps = {
   params: Movie;
@@ -47,7 +47,7 @@ export default function CardMovieComponent({ params }: CardMovieProps) {
             {title}
           </CardTitle>
           <CardDescription className="text-xs text-zinc-300">
-            {release_date.toLocaleDateString("en-US", getDefaultDateFormat())}
+            {release_date.toLocaleString("en-US", getDefaultDateFormat())}
           </CardDescription>
         </CardHeader>
         <CardContent className="h-28   ">

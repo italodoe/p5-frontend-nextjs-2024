@@ -46,8 +46,8 @@ export type SinglePerson = {
   adult: boolean;
   also_known_as: string[];
   biography: string;
-  birthday: string;
-  deathday: string | null;
+  birthday: string | Date;
+  deathday: string | Date | null;
   gender: number;
   homepage: string | null;
   id: number;

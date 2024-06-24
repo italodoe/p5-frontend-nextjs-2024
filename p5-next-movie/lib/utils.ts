@@ -14,7 +14,9 @@ export const getDefaultMoviePicture = () => {
 };
 
 export const getDefaultDateFormat = () => {
-  var dateOptions = { year: "numeric", month: "long", day: "numeric" };
+  // return { year: "numeric", month: "long", day: "numeric" };
+  const timeFormat: Intl.DateTimeFormatOptions ={ year: "numeric", month: "long", day: "numeric" };
+  return timeFormat;
 };
 
 export function capitalizeFirstLetter(str: string) {
