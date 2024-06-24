@@ -48,7 +48,7 @@ export default function CarouselPopularComponent(
                           src={getMoviePicture(movie.poster_path)}
                           width={100}
                           height={200}
-                          className="rounded-md bg-indigo-500 shadow-md shadow-indigo-200/30"
+                          className="rounded-md  first-line: shadow-md shadow-indigo-200/30 skeleton-img"
                           alt={movie.title}
                         ></Image>
                       </div>

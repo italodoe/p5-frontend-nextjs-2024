@@ -45,7 +45,7 @@ export default function CarouselComponent(movieListParams: movieListParams) {
                       <div></div>
                       <Image
                         key={movie.backdrop_path}
-                        className="rounded-md"
+                        className="rounded-md skeleton-img"
                         src={getMoviePicture(movie.backdrop_path)}
                         width={1000}
                         height={500}

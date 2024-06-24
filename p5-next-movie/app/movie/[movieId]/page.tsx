@@ -1,5 +1,5 @@
 import { actionSingleMovie } from "@/app/actions/movies";
-import { getDefaultDateFormat, getMoviePicture } from "@/lib/utils";
+import { cn, getDefaultDateFormat, getMoviePicture } from "@/lib/utils";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -28,9 +28,9 @@ export default async function Page({ params }: PageProps) {
       <div className="w-3/4 mx-auto pt-unit-2xl ">
         <div className="flex h-full">
           <Image
-            className={movie.title}
+            className={cn(movie.title, "skeleton-img")}
             src={posterImg}
-            width={400}
+            width={450}
             height={700}
             alt={"poster"}
           ></Image>

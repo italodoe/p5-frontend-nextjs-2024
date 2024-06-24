@@ -48,7 +48,7 @@ export default function CarouselPopularPeopleComponent(
                           src={getMoviePicture(person.profile_path)}
                           width={200}
                           height={200}
-                          className="    rounded-full"
+                          className=" skeleton-img   !rounded-full"
                           alt={person.name}
                         ></Image>
                       </div>

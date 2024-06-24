@@ -28,10 +28,10 @@ export default async function Page({ params }: PageProps) {
       <div className="w-3/4 mx-auto pt-unit-2xl ">
         <div className="flex h-full">
           <Image
-            className="max-h-[700px]"
+            className="max-h-[700px] skeleton-img"
             title={person.name}
             src={posterImg}
-            width={400}
+            width={450}
             height={700}
             alt={"poster"}
           ></Image>

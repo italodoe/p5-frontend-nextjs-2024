@@ -37,7 +37,7 @@ export default function CardMovieComponent({ params }: CardMovieProps) {
       <Card className="card-item bg-stone-900 text-destructive-foreground hover:bg-stone-800 cursor-pointer select-none">
         <Image
           key={image_path}
-          className="card-image"
+          className="card-image skeleton-img"
           src={image_path}
           width={"5000"}
           height={"2000"}
