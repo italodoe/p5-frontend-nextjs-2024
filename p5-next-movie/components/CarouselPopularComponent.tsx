@@ -44,6 +44,7 @@ export default function CarouselPopularComponent(
                     <div className="flex flex-row gap-4 w-full">
                       <div className="w-1/2">
                         <Image
+                         key={movie.poster_path}
                           src={getMoviePicture(movie.poster_path)}
                           width={100}
                           height={200}

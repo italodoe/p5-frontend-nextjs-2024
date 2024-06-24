@@ -36,6 +36,7 @@ export default function CardMovieComponent({ params }: CardMovieProps) {
     <Link href={`/movie/${id}`} className="card-link">
       <Card className="card-item bg-stone-900 text-destructive-foreground hover:bg-stone-800 cursor-pointer select-none">
         <Image
+          key={image_path}
           className="card-image"
           src={image_path}
           width={"5000"}

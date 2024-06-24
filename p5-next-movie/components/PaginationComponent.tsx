@@ -17,6 +17,7 @@ export default function PaginationComponent(pageParams: pageParams) {
   const { totalPages, actual, term } = pageParams;
   const router = useRouter();
   const onClickHandler = (page: number) => {
+    console.log('term--->', term)
     let query = "?";
     if (term) query = `?query=${term}&`;
 

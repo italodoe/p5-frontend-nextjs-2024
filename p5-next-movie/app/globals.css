@@ -258,7 +258,7 @@ body {
   height: 700px !important;
 }
 .main-page {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 80px);
 }
 
 .card-main-link:hover > div {

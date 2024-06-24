@@ -44,6 +44,7 @@ export default function CarouselPopularPeopleComponent(
                     <div className="flex flex-row gap-4 w-full">
                       <div className="w-2/6">
                         <Image
+                         key={person.profile_path}
                           src={getMoviePicture(person.profile_path)}
                           width={200}
                           height={200}

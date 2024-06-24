@@ -29,7 +29,7 @@ export default function SearchInput() {
 
   const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    handle(textRef.current!.value, searchParams);
+   handle(textRef.current!.value, searchParams);
   };
 
   return (

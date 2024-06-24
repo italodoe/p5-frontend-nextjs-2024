@@ -12,7 +12,7 @@ const Home: FC<serverParams> = async ({ searchParams }: serverParams) => {
   return (
     <PageList
       text={query}
-      term={null}
+      term={query}
       page={actualPage}
       movies={movies_search}
       totalPages={total_pages}
